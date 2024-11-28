@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-item {
+    @apply text-white/70 text-sm font-semibold py-1.5 px-4 rounded-full hover:bg-white/10 transition duration-500 hover:text-white;
+  }
+ 
+  .ring-item {
+    @apply absolute border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-custom-inset border-emerald-300/5 shadow-emerald-300/5;
+  }
+}
