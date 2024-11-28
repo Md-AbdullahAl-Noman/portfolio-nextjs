@@ -11,3 +11,9 @@
     @apply absolute border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-custom-inset border-emerald-300/5 shadow-emerald-300/5;
   }
 }
+
+@layer utilities {
+  .container {
+    @apply lg:max-w-5xl
+  }
+}
