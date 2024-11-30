@@ -57,7 +57,9 @@ export const HeroSection = () => {
         <div className="flex flex-col items-center">
           <Image src={animeme} alt="hero img" width={130} height={120} />
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
-            <div className="bg-green-500 size-2.5 rounded-full"></div>
+            <div className="bg-green-500 size-2.5 rounded-full relative">
+              <div className="absolute inset-0 bg-green-500 rounded-full animate-ping"></div>
+            </div>
             <div className="text-sm font-medium">
               Available for new contributions
             </div>
