@@ -58,7 +58,7 @@ export const TestimonialsSection = () => {
         >
           <div className="flex flex-none gap-8">
             {testimonials.map((testimonial) => (
-              <Card key={testimonial.name} className="max-w-xs md:p-8 md:max-w-md">
+              <Card key={testimonial.name} className="px-6 py-8 max-w-xs md:p-8 md:max-w-md">
                 <div className="flex gap-4 items-center">
                   <div className="size-14 bg-gray-700 inline-flex items-center justify-center rounded-full flex-shrink-0">
                     <Image

@@ -11,12 +11,12 @@ export default function CardHeader({
   className?: string;
 }) {
   return (
-    <div className={twMerge("flex flex-col",className)}>
-      <div className="inline-flex justify-center items-center gap-2">
+    <div className={twMerge("flex flex-col p-6",className)}>
+      <div className="inline-flex  items-center gap-2">
         <StarIcon className="size-9 text-emerald-300 " />
         <h3 className="text-3xl font-serif tracking-wide ">{title}</h3>
       </div>
-      <p className="text-sm text-white/60 mt-2">{description}</p>
+      <p className="text-sm lg:text-base text-white/60 mt-2">{description}</p>
     </div>
   );
 }

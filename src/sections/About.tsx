@@ -217,72 +217,117 @@ const hobbies = [
   {
     title: "Music",
     emoji: "🎵",
+    left: "68%",
+    top: "50%",
   },
   {
     title: "Reading",
     emoji: "📚",
+    left: "5%",
+    top: "5%",
   },
   {
-    title: "Playing Video Games",
+    title: "Gaming",
     emoji: "🎮",
+    left: "48%",
+    top: "2%",
+  },
+  {
+    title: "Football",
+    emoji: "⚽",
+    left: "70%",
+    top: "15%",
+  },
+  {
+    title: "Movies",
+    emoji: "🎥",
+    left: "40%",
+    top: "30%",
   },
   {
     title: "Singing",
     emoji: "🎤",
+    left: "10%",
+    top: "35%",
   },
   {
     title: "Traveling",
     emoji: "🌍",
+    left: "45%",
+    top: "75%",
+  },
+  {
+    title: "Fitness",
+    emoji: "🏋️",
+    left: "5%",
+    top: "65%",
   },
 ];
 export const AboutSection = () => {
   return (
-    <div className="mt-16">
+    <div className="mt-16 mb-16 ">
       <div className="container">
         <SectionHeader
           eyeBrowText="About Me"
           title="A Glimpse Into My World😊"
           description="Learn more about who I am, what I do, and how my skills align with your needs."
         />
-        <div className="mt-20">
-          <Card className="h-[320px]">
-            <CardHeader
-              title="My Reads"
-              description=" Explore the books that have shaped my perspective and knowledge."
-            />
-            <div className="w-40 mx-auto mt-8">
-              <Image src={bookImage} alt="Book" />
-            </div>
-          </Card>
-          <Card className="h-[320px] p-0">
-            <CardHeader
-              title="My TookBox"
-              description="Explore my cutting edge technological skills and tools I use to
-                craft innovative solutions."
-              className="px-6 pt-6"
-            />
-            <ToolBoxItem items={skillsAndTools} />
-            
-          </Card>
-          <Card>
-            <CardHeader
-              title="Beyond the Code"
-              description="Explore my passions, hobbies, and interests."
-            />
-
-            <div>
-              {hobbies.map((hobby) => (
-                <div key={hobby.title}>
-                  <span>{hobby.title}</span>
-                  <span>{hobby.emoji}</span>
-                </div>
-              ))}
-            </div>
-          </Card>
-          <Card>
-            <Image src={mapImage} alt="Map" />
-            <Image src={myMapIcon} alt="MyMap" />
-          </Card>
+        <div className="mt-20 flex flex-col gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid md:grid-cols-5 lg:grid-cols-3">
+            <Card className="h-[320px] md:col-span-2 lg:col-span-1">
+              <CardHeader
+                title="My Reads"
+                description=" Explore the books that have shaped my perspective and knowledge."
+              />
+              <div className="w-40 mx-auto mt-8 md:mt-4 lg:mt-0 ">
+                <Image src={bookImage} alt="Book" />
+              </div>
+            </Card>
+            <Card className="h-[320px] p-0 md:col-span-3 lg:col-span-2"> 
+              <CardHeader
+                title="My ToolBox"
+                description="Explore my cutting edge technological skills and tools I use to
+                  craft innovative solutions."
+                className=""
+              />
+              <ToolBoxItem items={skillsAndTools} className="mt-6" />
+              <ToolBoxItem
+                items={skillsAndTools}
+                className="mt-6"
+                wrapperClassName="-translate-x-1/2"
+              />
+            </Card>
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid md:grid-cols-5 lg:grid-cols-3">
+            <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
+              <CardHeader
+                title="Beyond the Code"
+                description="Explore my passions, hobbies, and interests."
+                className="px-6 pt-6"
+              />
+              <div className="mt-8 relative flex-1">
+                {hobbies.map((hobby) => (
+                  <div
+                    key={hobby.title}
+                    className="inline-flex gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
+                    style={{
+                      left: hobby.left,
+                      top: hobby.top,
+                    }}
+                  >
+                    <span className="font-md text-gray-950">{hobby.title}</span>
+                    <span>{hobby.emoji}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+            <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
+              <Image src={mapImage} alt="Map" className="h-full w-full object-cover"/>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[140%] size-20 roounded-full">
+                <Image src={myMapIcon} alt="MyMap"  className="size-20"/>
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
