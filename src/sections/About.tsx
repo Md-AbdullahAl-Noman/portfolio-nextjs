@@ -1,9 +1,9 @@
 import Card from "@/components/Card";
 import SectionHeader from "@/components/SectionHeader";
-import StarIcon from "@/assets/icons/star.svg";
+
 import bookImage from "@/assets/images/book-cover.png";
 import Image from "next/image";
-// import JavaScriptIcon from "@/assets/icons/javascript.svg";
+
 import HtmlIcon from "@/assets/icons/html5.svg";
 import CssIcon from "@/assets/icons/css3.svg";
 import ReactIcon from "@/assets/icons/react.svg";
@@ -11,7 +11,7 @@ import GitHub from "@/assets/icons/github.svg";
 import JsIcon from "@/assets/icons/square-js.svg";
 import TechIcon from "@/components/TechIcon";
 import mapImage from "@/assets/images/map.png";
-import myMapIcon from "@/assets/images/mapimage.png";
+import myMapIcon from "@/assets/images/nomanMapImage.png";
 import CardHeader from "@/components/CardHeader";
 import ToolBoxItem from "@/components/ToolBoxItem";
 
@@ -283,18 +283,22 @@ export const AboutSection = () => {
                 <Image src={bookImage} alt="Book" />
               </div>
             </Card>
-            <Card className="h-[320px] p-0 md:col-span-3 lg:col-span-2"> 
+            <Card className="h-[320px] p-0 md:col-span-3 lg:col-span-2">
               <CardHeader
                 title="My ToolBox"
                 description="Explore my cutting edge technological skills and tools I use to
                   craft innovative solutions."
                 className=""
               />
-              <ToolBoxItem items={skillsAndTools} className="mt-6" />
               <ToolBoxItem
                 items={skillsAndTools}
                 className="mt-6"
-                wrapperClassName="-translate-x-1/2"
+                wrapperClassName="animate-move-left-animation [animation-duration:30s]"
+              />
+              <ToolBoxItem
+                items={skillsAndTools}
+                className="mt-6"
+                wrapperClassName="-translate-x-1/2 animate-move-right-animation [animation-duration:30s]"
               />
             </Card>
           </div>
@@ -322,9 +326,19 @@ export const AboutSection = () => {
               </div>
             </Card>
             <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
-              <Image src={mapImage} alt="Map" className="h-full w-full object-cover"/>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[140%] size-20 roounded-full">
-                <Image src={myMapIcon} alt="MyMap"  className="size-20"/>
+              <Image
+                src={mapImage}
+                alt="Map"
+                className="h-full w-full object-cover"
+              />
+              <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[140%] size-20 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 p-2 after:content[''] after:outline after:absolute after:inset-0 after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30 
+                
+              "
+              >
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:3s]"></div>
+                <Image src={myMapIcon} alt="MyMap" className="size-12 translate-x-2 translate-y-2" />
               </div>
             </Card>
           </div>

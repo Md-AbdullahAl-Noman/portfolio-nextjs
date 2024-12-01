@@ -3,18 +3,22 @@ export const HeroStars = ({
   children,
   size,
   rotation,
-  spinShouldOrbit = false,
+  orbitShouldSpin = false,
   orbitSpinDuration,
+  starSpinDuration = "10s",
+  shouldStarSpin = false, // Add this prop to make the stars
 }: PropsWithChildren<{
   size: number;
   rotation: number;
   orbitSpinDuration?: string;
-  spinShouldOrbit?: boolean;
+  orbitShouldSpin?: boolean;
+  shouldStarSpin?: boolean;
+  starSpinDuration?: string;
 }>) => {
   return (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
       <div
-        className={spinShouldOrbit && "animate-spin "}
+        className={orbitShouldSpin && "animate-spin "}
         style={{
           animationDuration: orbitSpinDuration,
         }}
@@ -27,7 +31,10 @@ export const HeroStars = ({
             transform: `rotate(${rotation}deg)`,
           }}
         >
-          <div className="animate-spin [animation-duration:10s]">
+          <div
+            className={shouldStarSpin && "animate-spin"}
+            style={{ animationDuration: starSpinDuration }}
+          >
             <div
               className="inline-flex "
               style={{ transform: `rotate(${rotation * -1}deg)` }}
