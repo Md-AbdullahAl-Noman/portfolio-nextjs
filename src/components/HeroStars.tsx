@@ -18,7 +18,7 @@ export const HeroStars = ({
   return (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
       <div
-        className={orbitShouldSpin && "animate-spin "}
+        className={orbitShouldSpin ? "animate-spin ":undefined}
         style={{
           animationDuration: orbitSpinDuration,
         }}
@@ -32,7 +32,7 @@ export const HeroStars = ({
           }}
         >
           <div
-            className={shouldStarSpin && "animate-spin"}
+            className={shouldStarSpin ? "animate-spin":undefined}
             style={{ animationDuration: starSpinDuration }}
           >
             <div

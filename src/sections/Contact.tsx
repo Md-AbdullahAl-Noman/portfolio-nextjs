@@ -23,13 +23,16 @@ export const ContactSection = () => {
               </p>
             </div>
             <div className="flex gap-4">
-              <button className="text-white bg-gray-900 inline-flex items-center px-4 h-12 rounded-xl gap-2 w-max border border-gray-900 text-sm">
+              <a
+                className="text-white bg-gray-900 inline-flex items-center px-4 h-12 rounded-xl gap-2 w-max border border-gray-900 text-sm"
+                href="mailto:abdullahnoman1414@gmail.com"
+              >
                 <span className="font-semibold">Contact Me</span>
                 <ArrowUpRightIcon className="size-4" />
-              </button>
+              </a>
               <a
-                href="src/assets/files/MdAbdullahAlNoman_Resume_SoftwareEngineer.pdf"
-                download
+                href="/MdAbdullahAlNoman_Resume_SoftwareEngineer.pdf"
+                download="MdAbdullahAlNoman_Resume_SoftwareEngineer.pdf"
                 className="text-gray-900 bg-white inline-flex items-center px-4 h-12 rounded-xl gap-2 w-max border border-gray-900 text-sm"
               >
                 <span className="font-semibold">Download CV</span>

@@ -1,4 +1,4 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
+import autoworxImage from "@/assets/images/autoworxphoto.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Link from "next/link";
@@ -12,15 +12,15 @@ import Card from "@/components/Card";
 const portfolioProjects = [
   {
     company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    year: "2024",
+    title: "AutoWorx",
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Increased UI efficiency by 35%" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
+    link: "https://autoworx.link/",
+    image: autoworxImage,
   },
   {
     company: "Innovative Co",
@@ -104,7 +104,7 @@ export const ProjectsSection = () => {
                   </Link>
                 </div>
 
-                <div className="relative">
+                <div className="relative -left-20">
                   <Image
                     src={project.image}
                     alt={project.title}

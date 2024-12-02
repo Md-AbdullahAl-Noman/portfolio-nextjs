@@ -1,7 +1,9 @@
+"use client";
 import Card from "@/components/Card";
 import SectionHeader from "@/components/SectionHeader";
 
 import bookImage from "@/assets/images/book-cover.png";
+import cppbook from "@/assets/images/cppbook.png";
 import Image from "next/image";
 
 import HtmlIcon from "@/assets/icons/html5.svg";
@@ -14,6 +16,24 @@ import mapImage from "@/assets/images/map.png";
 import myMapIcon from "@/assets/images/nomanMapImage.png";
 import CardHeader from "@/components/CardHeader";
 import ToolBoxItem from "@/components/ToolBoxItem";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import NextJs from "@/assets/icons/nextjs.svg";
+import NestJs from "@/assets/icons/nestjs.svg";
+import Python from "@/assets/icons/python.svg";
+import Mysql from "@/assets/icons/mysql.svg";
+import PostgreSql from "@/assets/icons/postgres.svg";
+import MongoDb from "@/assets/icons/mongodb.svg";
+import TsIcon from "@/assets/icons/ts.svg";
+import CppIcon from "@/assets/icons/cpp.svg";
+import NodeIcon from "@/assets/icons/nodejs.svg";
+import ExpressIcon from "@/assets/icons/express.svg";
+import TailwindIcon from "@/assets/icons/tailwind.svg";
+import ReduxIcon from "@/assets/icons/redux.svg";
+import GitHubIcon from "@/assets/icons/github.svg";
+import JiraIcon from "@/assets/icons/jira.svg";
+import AsanaIcon from "@/assets/icons/asana.svg";
+import framerIcon from "@/assets/icons/framer-motion.svg";
 
 const skillsAndTools = [
   // Programming Languages
@@ -21,31 +41,19 @@ const skillsAndTools = [
     title: "JavaScript",
     iconType: JsIcon,
   },
-  // {
-  //   title: "C++",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Java",
-  //   iconType: "",
-  // },
+  {
+    title: "TypeScript",
+    iconType: TsIcon,
+  },
+  {
+    title: "C++",
+    iconType: CppIcon,
+  },
 
-  // {
-  //   title: "Python",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "PHP",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "TypeScript",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "C#",
-  //   iconType: "ite",
-  // },
+  {
+    title: "Python",
+    iconType: Python,
+  },
 
   // Frontend Development
   {
@@ -53,165 +61,74 @@ const skillsAndTools = [
     iconType: ReactIcon,
   },
   {
+    title: "Next Js",
+    iconType: NextJs,
+  },
+  // {
+  //   title: "Next Js",
+  //   iconType: NextJs,
+  // },
+  {
     title: "CSS3",
     iconType: CssIcon,
+  },
+  {
+    title: "Tailwind CSS",
+    iconType: TailwindIcon,
   },
   {
     title: "HTML5",
     iconType: HtmlIcon,
   },
-  // {
-  //   title: "MUI",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Radix UI",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Ant Design",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "TailwindCSS",
-  //   iconType: "",
-  // },
-
-  // State Management
-  // {
-  //   title: "Zustand",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Redux",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Redux-Toolkit",
-  //   iconType: "",
-  // },
-
-  // {
-  //   title: "Context-API",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Zod",
-  //   iconType: "",
-  // },
 
   // Backend Development
-  // {
-  //   title: "NodeJS",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Express.js",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Nodemon",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Next JS",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "NestJS",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "JWT",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "NPM",
-  //   iconType: "",
-  // },
-  // {
-  //   title: ".Net",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Django",
-  //   iconType: "",
-  // },
+  {
+    title: "NodeJS",
+    iconType: NodeIcon,
+  },
+
+  {
+    title: "ExpressJS",
+    iconType: ExpressIcon,
+  },
+  {
+    title: "NestJs",
+    iconType: NestJs,
+  },
+  {
+    title: "Redux",
+    iconType: ReduxIcon,
+  },
 
   // Database Management
-  // {
-  //   title: "MongoDB",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "MySQL",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Postgres",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Prisma",
-  //   iconType: "",
-  // },
-
-  // // Mobile Development
-  // {
-  //   title: "React Native",
-  //   iconType: "",
-  // },
-
-  // // Development Tools
-  // {
-  //   title: "Vite",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Git",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "GitHub",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Postman",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Docker",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Netlify",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Vercel",
-  //   iconType: "",
-  // },
-
-  // // Data Science & AI Tools
-  // {
-  //   title: "NumPy",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Pandas",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "scikit-learn",
-  //   iconType: "",
-  // },
-  // {
-  //   title: "Matplotlib",
-  //   iconType: "",
-  // },
-
-  // // UI/UX and Design
-  // { title: "Figma", iconType: "" },
+  {
+    title: "MySQL",
+    iconType: Mysql,
+  },
+  {
+    title: "PostgreSQL",
+    iconType: PostgreSql,
+  },
+  {
+    title: "MongoDB",
+    iconType: MongoDb,
+  },
+  {
+    title: "GitHub",
+    iconType: GitHubIcon,
+  },
+  {
+    title: "Jira",
+    iconType: JiraIcon,
+  },
+  {
+    title: "Asana",
+    iconType: AsanaIcon,
+  },
+  {
+    title: "Framer Motion",
+    iconType: framerIcon,
+  },
 ];
 const hobbies = [
   {
@@ -264,6 +181,7 @@ const hobbies = [
   },
 ];
 export const AboutSection = () => {
+  const constraintRef = useRef(null);
   return (
     <div className="mt-16 mb-16 ">
       <div className="container">
@@ -280,7 +198,8 @@ export const AboutSection = () => {
                 description=" Explore the books that have shaped my perspective and knowledge."
               />
               <div className="w-40 mx-auto mt-8 md:mt-4 lg:mt-0 ">
-                <Image src={bookImage} alt="Book" />
+                <Image src={bookImage} alt="HabitsBook" />
+                <Image src={cppbook} alt="CppBook" />
               </div>
             </Card>
             <Card className="h-[320px] p-0 md:col-span-3 lg:col-span-2">
@@ -309,19 +228,21 @@ export const AboutSection = () => {
                 description="Explore my passions, hobbies, and interests."
                 className="px-6 pt-6"
               />
-              <div className="mt-8 relative flex-1">
+              <div className="mt-8 relative flex-1" ref={constraintRef}>
                 {hobbies.map((hobby) => (
-                  <div
+                  <motion.div
                     key={hobby.title}
                     className="inline-flex gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
                     style={{
                       left: hobby.left,
                       top: hobby.top,
                     }}
+                    drag
+                    dragConstraints={constraintRef}
                   >
                     <span className="font-md text-gray-950">{hobby.title}</span>
                     <span>{hobby.emoji}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </Card>
@@ -338,7 +259,11 @@ export const AboutSection = () => {
               >
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:3s]"></div>
-                <Image src={myMapIcon} alt="MyMap" className="size-12 translate-x-2 translate-y-2" />
+                <Image
+                  src={myMapIcon}
+                  alt="MyMap"
+                  className="size-12 translate-x-2 translate-y-2"
+                />
               </div>
             </Card>
           </div>
