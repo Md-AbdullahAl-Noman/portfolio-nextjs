@@ -4,7 +4,7 @@ import { Inter, Calistoga } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Md Abdullah Al Noman",
   description:
     "Created to demonstrate my projects and skills as software engineer",
 };

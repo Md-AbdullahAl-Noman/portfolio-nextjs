@@ -1,5 +1,5 @@
 import autoworxImage from "@/assets/images/autoworxphoto.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
+import fsbmbdImage from "@/assets/images/fsmbdimage.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,7 +11,7 @@ import Card from "@/components/Card";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
+    company: "Levant It Solutions",
     year: "2024",
     title: "AutoWorx",
     results: [
@@ -23,29 +23,29 @@ const portfolioProjects = [
     image: autoworxImage,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "Levant It Solutions",
+    year: "2024",
+    title: "FSMBD Website",
     results: [
-      { title: "Boosted sales by 20%" },
+      { title: "Boosted animations by 20%" },
       { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "Increased brand and safety awareness by 15%" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    link: "https://fsm24.vercel.app/",
+    image: fsbmbdImage,
   },
-  {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
-  },
+  // {
+  //   company: "Quantum Dynamics",
+  //   year: "2023",
+  //   title: "AI Startup Landing Page",
+  //   results: [
+  //     { title: "Enhanced user experience by 40%" },
+  //     { title: "Improved site speed by 50%" },
+  //     { title: "Increased mobile traffic by 35%" },
+  //   ],
+  //   link: "https://youtu.be/Z7I5uSRHMHg",
+  //   image: aiStartupLandingPage,
+  // },
 ];
 
 export const ProjectsSection = () => {
@@ -66,7 +66,6 @@ export const ProjectsSection = () => {
             "
               style={{
                 top: `calc(64px + ${index * 40}px)`,
-                
               }}
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-12">
@@ -104,7 +103,7 @@ export const ProjectsSection = () => {
                   </Link>
                 </div>
 
-                <div className="relative -left-20">
+                <div className="relative ">
                   <Image
                     src={project.image}
                     alt={project.title}

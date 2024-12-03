@@ -1,5 +1,6 @@
 import Image from "next/image";
 import animeme from "@/assets/images/animeme.png";
+import nomanImage from "@/assets/images/nomanImaground.png";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import Star from "@/assets/icons/star.svg";
@@ -144,15 +145,21 @@ export const HeroSection = () => {
         </HeroStars>
       </div>
 
-      <div className="container">
+      <div className="container mt-12 lg:mt-0 xl:mt-4 ">
         <div className="flex flex-col items-center">
-          <Image
-            src={animeme}
-            alt="hero img"
-            width={130}
-            height={120}
-            className="z-50"
-          />
+          <div className="rounded-full  relative z-50">
+            <Image
+              src={nomanImage}
+              alt="hero img"
+              width={130}
+              height={130}
+              className="mb-2  rounded-full "
+            />
+          </div>
+          <div className="-mt-1 ml-1 absolute rounded-full size-[140px]   z-0 mb-4">
+            <div className="absolute rounded-full size-[137px] bg-[conic-gradient(#6ee7b7_20deg,transparent_120deg)] animate-rotate-border-animation mb-4"></div>
+          </div>
+
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
             <div className="bg-green-500 size-2.5 rounded-full relative">
               <div className="absolute inset-0 bg-green-500 rounded-full animate-ping"></div>

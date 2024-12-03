@@ -6,6 +6,8 @@ module.exports = {
       sm: "375px",
       md: "768px",
       lg: "1200px",
+      xl: "1440px",
+      xl2: "1920px",
     },
     container: {
       center: true,
@@ -25,6 +27,7 @@ module.exports = {
       animation: {
         "move-left-animation": "move-left 1s linear infinite",
         "move-right-animation": "move-right 1s linear infinite",
+        "rotate-border-animation": "rotate 10s linear infinite",
       },
 
       keyframes: {
@@ -36,6 +39,10 @@ module.exports = {
         "move-right": {
           "0%": { transform: "translateX(-50%)" },
           "100%": { transform: "translateX(0)" },
+        },
+        rotate: {
+          "0%": { transform: "rotate(0deg) scale(1)" },
+          "100%": { transform: "rotate(-360deg) scale(1)" },
         },
       },
     },
