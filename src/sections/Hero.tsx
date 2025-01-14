@@ -6,6 +6,7 @@ import grainImage from "@/assets/images/grain.jpg";
 import Star from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import { HeroStars } from "@/components/HeroStars";
+import Link from "next/link";
 export const HeroSection = () => {
   return (
     <div className="py-20 md:py-44 lg:py-40 overflow-x-clip">
@@ -180,14 +181,20 @@ export const HeroSection = () => {
           </p>
         </div>
         <div className="flex flex-col items-center mt-2 md:mt-8 gap-4 md:flex-row justify-center">
-          <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
+          <a
+            className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl z-50"
+            href="#experience"
+          >
             <span>Explore My Work</span>
             <ArrowDown className="size-4" />
-          </button>
-          <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl">
+          </a>
+          <a
+            className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl z-50"
+            href="https://www.linkedin.com/in/abdullah-al-noman-ds/"
+          >
             <span>👋</span>
             <span className="font-semibold">Let&#39;s Connect</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>

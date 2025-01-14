@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { Briefcase, GraduationCap, Award, Rocket } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
+import Image from "next/image";
 
 interface TimelineItem {
   year: string;
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon: string;
 }
 
 const timelineData: TimelineItem[] = [
@@ -15,22 +16,21 @@ const timelineData: TimelineItem[] = [
     title: "Senior Software Engineer",
     description:
       "Led multiple successful projects and mentored junior developers",
-    icon: <Rocket className="w-6 h-6" />,
+    icon: "/business-development.gif",
   },
   {
     year: "2024",
     title: "Junior Software Engineer",
     description:
-      "Managed team of developers and architected scalable solutions",
-    icon: <Briefcase className="w-6 h-6" />,
+      "Contributed to a successful project and learned new technologies",
+    icon: "/target.gif",
   },
   {
     year: "2024",
     title: "Internship",
     description: "Worked as a software developer intern",
-    icon: <Award className="w-6 h-6" />,
+    icon: "/trophy.gif",
   },
- 
 ];
 
 const ExperienceTimeline = () => {
@@ -103,8 +103,16 @@ const ExperienceTimeline = () => {
                     </div>
                   </div>
                   <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2">
-                    <div className="bg-emerald-400 rounded-full p-2 shadow-lg">
-                      {item.icon}
+                    <div className=" rounded-full p-2 shadow-lg">
+                      {item.icon && (
+                        <Image
+                          src={item.icon}
+                          alt={item.title}
+                          className=" mb-4 bg-transparent rounded-full"
+                          width={42}
+                          height={42}
+                        />
+                      )}
                     </div>
                   </div>
                 </div>

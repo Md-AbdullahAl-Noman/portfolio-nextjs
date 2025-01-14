@@ -40,11 +40,11 @@
 /* Progress line */
 .timeline-progress {
   position: fixed;
-  top: 0;
+  top: 15%;
   left: 0;
   width: 100%;
   background-color: white;
   height: var(--scroll-percentage, 0%);
-  transition: height 0.1s ease-in-out;
-  z-index: 1000;
+  transition: height 0.1s ease-in;
+  z-index: 50;
 }

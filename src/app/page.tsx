@@ -46,7 +46,9 @@ export default function Home() {
         <ProjectsSection />
       </section>
       <TapeSection />
-      <ExperienceTimeline />
+      <section id="experience">
+        <ExperienceTimeline />
+      </section>
       <TestimonialsSection />
       <section id="about">
         <AboutSection />
