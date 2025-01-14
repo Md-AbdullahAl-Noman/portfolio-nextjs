@@ -7,7 +7,7 @@ export default function SectionHeader({
 }: {
   eyeBrowText: string;
   title: string;
-  description: string;
+  description?: string;
 }) {
   return (
     <div>

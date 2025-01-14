@@ -6,7 +6,7 @@
   .nav-item {
     @apply text-white/70 text-sm font-semibold py-1.5 px-4 rounded-full hover:bg-white/10 transition duration-500 hover:text-white;
   }
- 
+
   .ring-item {
     @apply absolute border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-custom-inset border-emerald-300/5 shadow-emerald-300/5;
   }
@@ -14,6 +14,37 @@
 
 @layer utilities {
   .container {
-    @apply lg:max-w-5xl
+    @apply lg:max-w-5xl;
   }
+}
+
+/* Timeline animations */
+.timeline-item {
+  opacity: 0;
+}
+
+.timeline-item.left-item {
+  transform: translateX(-100px);
+}
+
+.timeline-item.right-item {
+  transform: translateX(100px);
+}
+
+.timeline-item.timeline-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.8s ease-out;
+}
+
+/* Progress line */
+.timeline-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  height: var(--scroll-percentage, 0%);
+  transition: height 0.1s ease-in-out;
+  z-index: 1000;
 }
